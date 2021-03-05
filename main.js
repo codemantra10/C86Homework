@@ -9,7 +9,7 @@ function player_update(){
 fabric.Image.fromURL("player.png",function(Img){
 player_object=Img;
 player_object.scaleToWidth(150);
-player_object.scaletoHeight(100);
+player_object.scaleToHeight(100);
 player_object.set({
 top:player_y,left:player_x
 });
@@ -112,4 +112,46 @@ if (keypressed=="77") {
         document.getElementById("current_height").innerHTML=blockimageheight;
         document.getElementById("current_width").innerHTML=blockimagewidth;
         };        
+if (keypressed==37) {
+    left()    
+      }; 
+      if (keypressed==38) {
+      up()   
+      };
+      if (keypressed==39) {
+      right()    
+      };
+      if (keypressed==40) {
+       down()   
+      };
+    };                     
+function up(){
+if (player_y>=10) {
+player_y=player_y-blockimageheight;
+canvas.remove(player_object);
+player_update();    
+}
 };
+function down(){
+  if (player_y<=500) {
+  player_y=player_y+blockimageheight;
+  canvas.remove(player_object);
+  player_update();    
+  }
+  };
+  function left(){
+  if (player_x>=10) {
+player_x=player_x-blockimagewidth;
+canvas.remove(player_object);
+player_update();      
+}
+};
+function right(){
+if (player_x<=700) {
+  player_x=player_x+blockimagewidth;
+  canvas.remove(player_object);
+  player_update();    
+}
+}
+
+
